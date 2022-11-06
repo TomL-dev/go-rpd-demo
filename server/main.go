@@ -8,7 +8,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/tliefheid/go-grpc-demo/proto/notes"
+	"github.com/tliefheid/go-rpc-demo/proto/notes"
 	"google.golang.org/grpc"
 )
 
@@ -81,7 +81,7 @@ func main() {
 	// parse arguments from the command line
 	// this lets use define the port for the server
 	flag.Parse()
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
+	lis, err := net.Listen("tcp", fmt.Sprintf("127.0.0.1:%d", *port))
 	// Check for errors
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

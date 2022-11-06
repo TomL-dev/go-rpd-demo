@@ -2,6 +2,7 @@ package notes
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -9,7 +10,9 @@ import (
 )
 
 func SaveToDisk(n *Note, folder string) error {
+
 	filename := filepath.Join(folder, n.Title)
+	fmt.Printf("filename: %v\n", filename)
 	return os.WriteFile(filename, n.Body, 0755)
 }
 
